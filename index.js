@@ -9,6 +9,31 @@ ul.addEventListener("click", deleteExpense);
 
 ul.addEventListener("click", editExpense);
 
+window.addEventListener("load",displayOnLoad);
+
+
+function displayOnLoad(){
+    let keys = Object.keys(localStorage);
+    for(let key of keys){
+        let val = localStorage.getItem(key);
+        let li = document.createElement("li");
+        li.className = "list-group-item";
+        li.appendChild(document.createTextNode(val));
+
+        let deleteList = document.createElement("button");
+        deleteList.className = "btn btn-primary ms-5 delete";
+        deleteList.appendChild(document.createTextNode("Delete Expense"));
+        li.appendChild(deleteList);
+
+        let editList = document.createElement("button");
+        editList.className = "btn btn-primary ms-5 edit";
+        editList.appendChild(document.createTextNode("Edit Expense"));
+        li.appendChild(editList);
+
+        ul.appendChild(li);
+    }
+}
+
 
 function addExpense(event) {
     event.preventDefault();
