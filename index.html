@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .error{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header id="main-header" class="bg-primary text-white p-4 mb-3">
+        <div class="container">
+            <h1>Expense Tracker</h1>
+        </div>
+    </header>
+    <div class="container">
+        <form action="#" id="form">
+            <label for="amount" class="form-label fw-bold mt-4">Choose Expense Amount : </label>
+            <input type="number" id="amount" class="form-control"/>
+            <label for="description" class="form-label fw-bold mt-4">Choose Description : </label>
+            <input type="text" id="description" class="form-control"/>
+            <label for="category" class="form-label fw-bold mt-4">Choose a category : </label>
+            <select name="category" id="category" class="form-select mb-4">
+                <option selected>Select the category</option>
+                <option value="Movie">Movie</option>
+                <option value="Fuel">Fuel</option>
+                <option value="Electricity">Electricity</option>
+                <option value="Food">Food</option>
+            </select>
+            <input type="submit" id="submit" value="Add Expense" class="btn btn-primary mb-4"/>
+        </form>
+        <ul class="list-group" id="items">
+            <li class="list-group-item">100-Movie-On vacation <button class="btn btn-primary ms-5 delete">Delete Expense</button><button class="btn btn-primary ms-5 edit">Edit Expense</button></li>
+        </ul>
+    </div>
+</body>
+<script src="./index.js"></script>
+</html>
